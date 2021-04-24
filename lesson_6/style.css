@@ -1,0 +1,144 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+h1{
+	color: rgb(0, 0, 0);
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	padding: 30px 0 0;
+}
+h3{
+	color: rgb(0, 0, 0);
+	display: block;
+	padding: 20px;
+	margin: 20px;
+	border: 1px dotted rgb(0, 0, 0);
+	border-radius: 5px;
+	font-weight: 200;
+	width: 100%;
+	background: rgb(197, 178, 178);
+}
+
+#wrapper{
+	display: flex;
+	width: 800px;
+	margin: 0 auto;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+#catalog{
+	display: flex;
+	min-height: 100px;
+	width: 100%;
+	padding: 20px;
+	border: 1px dotted rgb(0, 0, 0);
+	border-radius: 5px;
+	flex-direction: column;
+	margin-bottom: 100px;
+}
+.prod_item{
+	display: flex;
+	width: 100%;
+	margin: 10px 0;
+	box-shadow: 0 0 6px 1px lightblue;
+	justify-content: space-between;
+}
+.item{
+	display: flex;
+	margin-left: 10px;
+}
+.image{
+	height: 100%;
+}
+.image:hover{
+	cursor: zoom-in; 
+}
+
+.description{
+	height: 100%;
+	margin-left: 30px;
+}
+.description h4{
+	font-size: 2em;
+	padding: 10px 0;
+}
+.price{
+	color: darkslateblue;
+}
+.price span{
+	font-size: 3em;
+}
+.offer{
+	visibility: hidden;
+	margin-left: 30px;
+	background: lightcoral;
+	font-size: 1.5em;
+}
+.show{
+	visibility: visible;
+	padding: 5px;
+}
+.sale{
+	display: flex;
+	width: 200px;
+	flex-direction: column;
+	align-items: flex-end;
+    justify-content: inherit;
+	margin: 10px;
+}
+.button{
+	display: block;
+	width: 100%;
+	background: lightblue;
+	padding: 10px;
+	text-align: center;
+	font-size: larger;
+	cursor: pointer;
+}
+.button:hover{
+	background: #4a93ab;
+}
+
+footer{
+	display: flex;
+	background: aqua;
+	position: fixed;
+	bottom: 0px;
+	height: 40px;
+	width: 100%;
+	margin-top: 30px;
+	padding: 20px;
+	align-items: center;
+	justify-content: center;
+}
+.total{
+	display: flex;
+	width: 800px;
+	font-size: 2em;
+	justify-content: space-between;
+	align-items: center;
+}
+.buy{
+	color: red;
+	display: block;
+	padding: 3px 10px;
+	border: 2px solid red;
+	text-decoration: none;
+}
+#popup{
+	position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(100, 113, 113, 0.82);
+    display: none;
+    height: 100vh;
+    cursor: zoom-out;
+}
+.scale{
+	transform: scale(2);
+}
