@@ -85,6 +85,7 @@ function correctEnding (){
 
 // создаем отображение корзины
 
+let $userAddr;
 function drowTotal (shoppingCart) {
     const $basket = document.querySelector('#basket');
     $basket.textContent = '';
@@ -135,6 +136,8 @@ function drowTotal (shoppingCart) {
             $confirmHtml.style.display = 'none';
             $messageHtml.style.display = 'flex';
             messageDrow();
+            let inputAddr = document.getElementById('addr');
+            $userAddr = inputAddr.value;
         });
         $message.addEventListener('click', function () {
             $messageHtml.style.display = 'none';
@@ -146,8 +149,19 @@ function drowTotal (shoppingCart) {
         function confirmDrow() {
             let confirmHtml = 
             `<p class="buy_hidden__item">Адрес доставки:</p>
-            <input id="addr" value="" type="text" class="buy_hidden__confirm" placeholder="Enter your location">`;
+            <div id="yandexmap"></div>
+            <input id="addr" type="text" class="buy_hidden__confirm" placeholder="Не пустышка, дальше используется">`;
             $confirmHtml.insertAdjacentHTML('afterbegin', confirmHtml);
+            
+            // отрисовка яндексКарт
+            var map;
+            function initMap () {
+                map = new ymaps.Map("yandexmap", {
+                center: [60.000915, 30.324680],
+                zoom: 16
+                });
+            }
+            ymaps.ready(initMap);
         }
         function messageDrow() {
             let messageHtml = 
@@ -201,10 +215,38 @@ $catalog.addEventListener('click', function(e) {
     if( e.target.tagName === 'IMG' ) {
         $popup.textContent = '';
         $popup.style.display = 'flex';
+        
+        imgArr = e.target.parentNode;
+        let imgCnt = 0;
         $popup.insertAdjacentHTML('beforeend',
-            `<img src="${e.target.getAttribute('src')}" class="scale">`);
-    }
+            `<img src="${imgArr.children[imgCnt].getAttribute('src')}" class="scale">`);
+                
+             
+        document.addEventListener('keydown', logKey);
+        function logKey(e) {
+            // if (e.keyCode == 'ArrowRight') {
+            //     imgCnt++;
+            //     console.log(imgCnt);
+            // } else if (e.keyCode == 'ArrowLeft') {
+            //     imgCnt--;
+            //     console.log(imgCnt);
+            // }
+
+            switch(e.code){
+                case 'ArrowRight':
+                    imgCnt++;
+                    console.log(imgCnt);
+                    break;
+                case 'ArrowLeft':
+                    imgCnt--;
+                    console.log(imgCnt);
+                    break;
+            };
+        };
+    };
 });
+
+
 
 // создаем модальное окно для подверждения заказа
 
@@ -216,7 +258,8 @@ function createConfirmWindow() {
 
     $orderDiv.className = 'orderDiv';
     $orderDiv.insertAdjacentHTML('beforeend', `
-    <h2>Ваш заказ от ${date}<br>на сумму ${totalSumm(shoppingCart)} рублей<br>в обработке.</h2>
+    <h2>Ваш заказ от ${date}<br>на сумму ${totalSumm(shoppingCart)} руб. передан в обработку.</h2>
+    <h4>Адрес доставки: ${$userAddr}</h4>
     <button id="close">Закрыть</button>`);
     $wrapper.append($orderDiv);
     
