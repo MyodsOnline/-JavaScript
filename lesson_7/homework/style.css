@@ -1,0 +1,230 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: system-ui;
+}
+h1{
+	color: rgb(0, 0, 0);
+	width: 100%;
+	margin: 75px auto 0;
+	display: block;
+	text-align: center;
+	padding: 30px 0 0;
+}
+h3{
+	color: rgb(0, 0, 0);
+	display: block;
+	padding: 20px;
+	margin: 20px;
+	border: 1px dotted rgb(0, 0, 0);
+	border-radius: 5px;
+	font-weight: 200;
+	width: 100%;
+	background: rgb(197, 178, 178);
+}
+
+#wrapper{
+	display: flex;
+	width: 800px;
+	margin: 0 auto;
+	flex-direction: column;
+	align-items: center;
+	/* position: relative; */
+	min-height: 100vh;
+}
+#catalog{
+	display: flex;
+	/* min-height: 100px; */
+	width: 100%;
+	padding: 20px;
+	border: 1px dotted rgb(0, 0, 0);
+	border-radius: 5px;
+	flex-direction: column;
+	margin-bottom: 100px;
+	flex-grow: 1;
+}
+.prod_item{
+	display: flex;
+	width: 100%;
+	margin: 10px 0;
+	box-shadow: 0 0 6px 1px lightblue;
+	justify-content: space-between;
+}
+.item{
+	display: flex;
+	margin: 5px 0 5px 10px;
+}
+.image{
+	display: flex;
+	flex-wrap: wrap;
+    width: 100px;
+}
+.small_img{
+	height: 70px;
+}
+.small_img:first-child{
+	height: 150px;
+}
+.image:hover{
+	cursor: zoom-in; 
+}
+
+.description{
+	height: 100%;
+	margin-left: 30px;
+}
+.description h4{
+	font-size: 2em;
+	padding: 10px 0;
+}
+.price{
+	color: darkslateblue;
+	margin-top: 50px;
+}
+.price span{
+	font-size: 3em;
+}
+.offer{
+	visibility: hidden;
+	margin-left: 30px;
+	background: lightcoral;
+	font-size: 1.5em;
+}
+.show{
+	visibility: visible;
+	padding: 5px;
+}
+.sale{
+	display: flex;
+	width: 200px;
+	flex-direction: column;
+	align-items: flex-end;
+    justify-content: inherit;
+	margin: 10px;
+}
+.button{
+	display: block;
+	width: 100%;
+	background: lightblue;
+	padding: 10px;
+	text-align: center;
+	font-size: larger;
+	cursor: pointer;
+}
+.button:hover{
+	background: #4a93ab;
+}
+
+header{
+	display: flex;
+	background: rgba(0, 255, 255, .85);
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	padding: 20px;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	flex-shrink: 0;
+	box-shadow: 0 0 12px 2px lightslategrey;
+}
+.total{
+	display: flex;
+	width: 800px;
+	font-size: 2em;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+}
+.total p{
+	font-weight: 500;
+}
+.buy{
+	color: red;
+	display: block;
+	padding: 3px 40px 9px;
+	border: 2px solid red;
+	cursor: pointer;
+	align-self: center;
+	border-radius: 25px;
+	font-weight: 500;
+	margin-top: 15px;
+}
+#popup{
+	position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(100, 113, 113, 0.82);
+    display: none;
+    height: 100vh;
+}
+.scale{
+	transform: scale(2);
+}
+#buy_hidden{
+	display: flex;
+	flex-direction: column;
+    align-items: end;
+    width: 800px;
+	font-size: 1.5em;
+}
+.buy_hidden__delete{
+	color: red;
+	margin-left: 25px;
+	font-size: .8em;
+}
+.buy_hidden__delete:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+#yandexmap{
+	width: 100%;
+	height: 300px;
+	margin:15px 0px;
+}
+.confirmHtml, .messageHtml{
+	display: none;
+    flex-direction: column;
+    align-items: end;
+    width: 800px;
+    font-size: 1.5em;
+}
+.form{
+	width: 100%;
+}
+.buy_hidden__confirm{
+	width: 100%;
+    border-radius: 15px;
+    border: 1px solid lightslategray;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 10px 0px;
+}
+.orderDiv{
+	position: fixed;
+	display: flex;
+	top: 50%;
+	max-width: 80%;
+	flex-direction: column;
+	background: rgba(0, 255, 255, .85);
+	box-shadow: 0 0 12px 2px lightslategrey;
+	padding: 60px 60px 10px;
+	border-radius: 20px;
+}
+#close{
+	margin: 30px;
+	padding: 3px 40px 9px;
+	color: red;
+	border: 2px solid red;
+	cursor: pointer;
+	align-self: center;
+	border-radius: 25px;
+	font-weight: 500;
+	background: none;
+	font-size: 1.5em;
+}
+.orderDiv h4{
+	margin-top: 15px;
+    font-weight: 300;
+}
